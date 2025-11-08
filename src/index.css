@@ -1,13 +1,57 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.Login-page {
+  background-image: url("https://images.pexels.com/photos/2882566/pexels-photo-2882566.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Login-left {
+  background-image: url("https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Register-page {
+
+  background-image: url("https://images.pexels.com/photos/2882566/pexels-photo-2882566.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.Register-left {
+  background-image: url("https://images.pexels.com/photos/31591013/pexels-photo-31591013.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.register-input {
+  margin-top: 25px;
+  border-bottom: 1px solid green;
+  width: 100%;
+}
+
+.register-input::placeholder {
+  color: black;
+}
+
+/* Profile page */
+
+
+.Profile-page {
 }
