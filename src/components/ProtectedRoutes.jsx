@@ -2,19 +2,19 @@ import { Navigate } from "react-router-dom"
 import Navbar from "../layout/Navbar"
 import Sidebar from "../layout/Sidebar"
 
-function ProtectedRoutes({children}){
+function ProtectedRoutes({ children }) {
     const token = localStorage.getItem("token")
 
-    if(!token){
+    if (!token) {
         return <Navigate to={'/'} ></Navigate>
-    }else{
+    } else {
         return (
-            <div style={{width:"100%",height:"100vh"}}>
-            <Navbar></Navbar>
-            <div style={{display:"flex",alignItems:"center",width:"100%",height:"100%"}} >
+            <div style={{ alignItems: "center",display: "flex", width: "100%", height: "100vh", background:"rgb(162, 184, 210)"  }}>
                 <Sidebar></Sidebar>
-                {children}
-            </div>
+                <div style={{  width: "100%", height: "100%" }} >
+                    <Navbar></Navbar>
+                    {children}
+                </div>
             </div>
         )
     }

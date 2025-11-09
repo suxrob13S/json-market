@@ -21,7 +21,10 @@ function App() {
             <Profile></Profile>
           </ProtectedRoutes>
         } ></Route>
-        <Route path="/product" element={<Product></Product>} ></Route>
+        <Route path="/product" element={
+          <ProtectedRoutes>
+            <Product></Product>
+          </ProtectedRoutes>} ></Route>
       </Routes>
 
 

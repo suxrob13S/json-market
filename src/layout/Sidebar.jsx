@@ -1,9 +1,75 @@
 
- function Sidebar(){
-    return(
-        <div style={{width:"18%",height:"100%",background:"red"}}>
+import React, { useState } from 'react';
+import type { MenuProps } from 'antd';
+import { Button, Menu } from 'antd';
+import {
+    AppstoreOutlined,
+    ContainerOutlined,
+    DesktopOutlined,
+    MailOutlined,
+    MenuFoldOutlined,
+    MenuUnfoldOutlined,
+    PieChartOutlined,
+} from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+
+
+type MenuItem = Required<MenuProps>['items'][number];
+
+const items: MenuItem[] = [
+    { key: '1', icon: <PieChartOutlined />, label: 'Option 1' },
+    { key: '2', icon: <DesktopOutlined />, label: 'Option 2' },
+    { key: '3', icon: <ContainerOutlined />, label: 'Option 3' },
+    {
+        key: 'sub1',
+        label: 'Navigation One',
+        icon: <MailOutlined />,
+        children: [
+            { key: '5', label: <Link to={"/profile"}>Profile</Link> },
+            { key: '6', label: <Link to={"/product"}>Product</Link> },
+            { key: '7', label: 'Settings' },
+            { key: '8', label: 'Admin' },
+        ],
+    },
+    {
+        key: 'sub2',
+        label: 'Navigation Two',
+        icon: <AppstoreOutlined />,
+        children: [
+            { key: '9', label: 'Option 9' },
+            { key: '10', label: 'Option 10' },
+            {
+                key: 'sub3',
+                label: 'Submenu',
+                children: [
+                    { key: '11', label: 'Option 11' },
+                    { key: '12', label: 'Option 12' },
+                ],
+            },
+        ],
+    },
+];
+
+
+function Sidebar() {
+    const [collapsed, setCollapsed] = useState(false);
+
+    const toggleCollapsed = () => {
+        setCollapsed(!collapsed);
+    };
+    return (
+
+        <Menu style={{ width: "20%", height: "100%", padding: " 80px 20px" }}
             
-        </div>
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
+            mode="inline"
+            theme="dark"
+            inlineCollapsed={collapsed}
+            items={items}
+        />
+
+
     )
 }
 
